@@ -1,0 +1,228 @@
+@import "https://necolas.github.io/normalize.css/8.0.1/normalize.css";
+@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:300,600,700&display=swap");
+
+:root {
+  --blue: hsl(223, 87%, 63%);
+  --pale-blue: hsl(223, 100%, 88%);
+  --light-red: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --very-dark-blue: hsl(209, 33%, 12%);
+  --body-font-size: 20px;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: var(--body-font-size);
+  min-height: 100vh;
+}
+
+/*** Header ***/
+.header {
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.header__title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header__title span {
+  color: var(--blue);
+}
+
+/*** Hero Section ***/
+.hero {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+}
+
+.hero__content {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  text-align: center;
+}
+
+.content__heading {
+  color: var(--gray);
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.content__heading b {
+  color: black;
+  font-weight: 700;
+}
+
+.content__text {
+  font-size: 1rem;
+}
+
+.cta-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.cta-form [type="email"] {
+  border: 1px solid var(--blue);
+  border-radius: 9999px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  padding: 0.75rem 1.5rem;
+}
+
+.cta-form [type="email"]::placeholder {
+  color: var(--blue);
+}
+
+.cta-form [type="email"]:invalid {
+  border-color: var(--light-red);
+}
+
+.cta-form [type="email"]:invalid + .email-error {
+  display: block;
+}
+
+.cta-form [type="submit"] {
+  background-color: var(--blue);
+  border: none;
+  border-radius: 9999px;
+  box-shadow: 0 4px 8px hsl(223, 100%, 88%);
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  padding: 0.9rem 4rem;
+  transition: background-color 200ms ease;
+}
+
+.cta-form [type="submit"]:hover {
+  background-color: hsl(223, 87%, 70%);
+}
+
+.email-input-wrapper {
+  color: var(--light-red);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+}
+
+.email-input-wrapper .email-error {
+  display: none;
+  margin-bottom: 1rem;
+}
+
+.hero__illustration {
+  background: no-repeat center / contain
+    url(../images/illustration-dashboard.png);
+  flex: auto;
+  height: 100%;
+  min-height: 300px;
+  margin: 2rem;
+}
+
+/*** Footer ***/
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon-btn {
+  border: 1px solid var(--pale-blue);
+  border-radius: 9999px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+}
+
+.icon-btn:hover {
+  background-color: var(--blue);
+}
+
+.icon-btn:hover a {
+  color: white;
+}
+
+.icon-btn:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.icon-btn a {
+  color: var(--blue);
+}
+
+.copyright {
+  color: var(--gray);
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.attribution {
+  color: var(--gray);
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.sr-only {
+  position: absolute;
+  border: none;
+  clip: rect(1px, 1px, 1px, 1px);
+  margin: -1px;
+  padding: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .header__title {
+    font-size: 1.5rem;
+  }
+
+  .content__heading {
+    font-size: 3rem;
+  }
+
+  .content__text {
+    font-size: 1.25rem;
+  }
+
+  .cta-form {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .email-input-wrapper {
+    margin-right: 1rem;
+    flex: auto;
+  }
+
+  .cta-form [type="submit"] {
+    align-self: flex-start;
+  }
+}
